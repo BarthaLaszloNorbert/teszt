@@ -5,26 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     <link rel="stylesheet" href="style.css">
     
     <title>Macska</title>
 </head>
 
 <body>
-    <form action="">
-        <div>
-            <label for="text" class="mr-sm-2">Név</label><br>
-            <input type="text" placeholder="Név" id="name">
+    <form action="/action_page.php">
+        <div class="form-group">
+          <label for="name">Név:</label>
+          <input type="text" class="form-control" placeholder="Kérem írja be a nevét!" id="name">
         </div>
-        <div>
-            <label for="text">Születési hely</label><br>
-            <input type="text" placeholder="Születési hely" id="placeOfBirth">
+        <div class="form-group">
+            <label for="placeOfBirth">Születési hely:</label>
+            <input type="text" class="form-control" placeholder="Kérem írja be születési helyét!" id="placeOfBirth">
+          </div>
+        <div class="form-group">
+          <label for="favoriteFood">Kedvenc étel:</label>
+          <input type="text" class="form-control" placeholder="Kérem írja be kedvenc ételét!" id="favoriteFood">
         </div>
-        <div>
-            <label for="text">Kedvenc étel</label><br>
-            <input type="text" placeholder="Kedvenc étel" id="favoriteFood">
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox"> Remember me
+          </label>
         </div>
-        <button type="submit">Submit</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 </body>
 </html>
