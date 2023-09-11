@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Űrlap</title>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <form>
+                <div>
+                    <label for="name" id="nameLabel">Jelentkező neve:</label><br>
+                    <input type="text" id="name" placeholder="Adja meg a nevét...">
+                </div>
+                <br>
+                <div>
+                    <label for="dateOfBirth" id="dateLabel">Születési dátum:</label><br>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth">
+                </div>
+                <br>
+                <div>
+                    <label for="kurzusField" id="kurzusLabel">Melyik tanfolyamra jelentkezik?</label>
+                    <fieldset id="kurzusField">
+                        <legend>Kurzusok</legend>
+                        <input type="checkbox" name="android" id="android">
+                        <label for="android">Android programozás</label><br>
+                        <input type="checkbox" name="java" id="java">
+                        <label for="java">Java programozás</label><br>
+                        <input type="checkbox" name="cCode" id="cCode">
+                        <label for="cCode">C programnyelv</label><br>
+                        <input type="checkbox" name="c#Code" id="c#Code">
+                        <label for="c#Code">C# programozás</label>
+                    </fieldset>
+                </div>
+                <div>
+
+                    <label for="szamlaField" id="szamlaLabel">Kér számlát?</label>
+                    <fieldset id="szamlaField">
+                        <legend>Számlát kérek</legend>
+                        <input type="radio" name="yes" id="yes">
+                        <label for="yes">Igen</label><br>
+                        <input type="radio" name="no" id="no">
+                        <label for="no">Nem</label><br>
+                    </fieldset>
+                </div><br>
+                <input type="submit" value="Elküld">
+                <input type="reset" value="Törlés">
+            </form>
+        </fieldset>
+    </div>
+
+
+</body>
+
+</html>
