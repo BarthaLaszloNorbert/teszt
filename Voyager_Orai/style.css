@@ -1,0 +1,25 @@
+.info{
+    background-color: rgb(255,250,210);
+    border: 2px solid;
+    border-color: rgb(105,105,105);
+    border-radius: 10px;
+    
+}
+#voyager{
+    font-weight: bold;
+}
+
+.lablec a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.lablec a:hover{
+    color: red;
+    font-style: italic;
+}
+
+p{
+    text-align: justify;
+}
