@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getMonthName(monthNumber) {
+            const date = new Date();
+            date.setMonth(monthNumber - 1);
+
+            return date.toLocaleString('en-US', {
+                month: 'long',
+            });
+        }
+
+
+        document.write("Typed by JavaShit" + '<br>')
+        document.write("OH NO, CHRINGE" + '<br>')
+
+        var a = 23
+        var b = 3.14
+        var name = "Hitler"
+        var vane = true
+        document.write("<h2>You are " + name + "?</h2><h1>" + vane + "</h1>")
+
+        var c = a + b
+        document.write(c + '<br>')
+
+        var szamok = [1, 7, 22, 6]
+        var i
+        var osszeg = 0
+        var harommalOszthato = 0
+        var max = szamok[0]
+        for (i = 0; i < szamok.length; i++) {
+            document.write(szamok[i])
+            osszeg += szamok[i]
+
+            if (i != 3) {
+                document.write(", ")
+            } else {
+                document.write("<br>")
+            }
+
+            if (szamok[i] % 3 == 0 && szamok[i] % 2 == 0) {
+                harommalOszthato++
+            }
+
+            if (szamok[i] > max) {
+                max = szamok[i]
+            }
+
+        }
+
+        document.write("A számok osszege: " + osszeg + "<br>")
+        document.write("A 3-mal osztható, páros számok száma: " + harommalOszthato + "<br>")
+        document.write("A legnagyobb szám a tömbben: " + max + "<br>")
+
+        var most = new Date
+        document.write("<br>" + most + "<br>")
+        document.write(getMonthName(most.getMonth() + 1) + "<br>")
+
+        console.log("Hehe, you did not see this :P")
+    </script>
+</head>
+
+<body>
+    <p>Szöbeg...szöveg...szöveg</p>
+</body>
+
+</html>
