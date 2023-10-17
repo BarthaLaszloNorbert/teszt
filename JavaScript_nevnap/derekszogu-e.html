@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+
+    <script>
+        function szamol() {
+            var a = document.getElementById("befogoA").value
+            var b = document.getElementById("befogoB").value
+            var c = document.getElementById("atfogo").value
+
+            if ((a * a) + (b * b) == (c * c)) {
+                document.getElementById("kiir").innerHTML = "Derékszögű a háromszög!"
+            } else {
+                document.getElementById("kiir").innerHTML = "Nem derékszögű a háromszög!"
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Derékszögű-e a háromszög?</h1>
+        <form action="">
+            <div class="form-group">
+                <label for="befogoA">a oldal</label>
+                <input type="text" class="form-control" name="befogoA" id="befogoA">
+            </div>
+            <div class="form-group">
+                <label for="befogoB">b oldal</label>
+                <input type="text" class="form-control" name="befogoB" id="befogoB">
+            </div>
+            <div class="form-group">
+                <label for="atfogo">c oldal</label>
+                <input type="text" class="form-control" name="atfogo" id="atfogo">
+            </div>
+            <input type="button" class="btn btn-success" value="derekszogu-e?" onclick="szamol()">
+
+        </form>
+        <h3 id="kiir"></h3>
+    </div>
+</body>
+
+</html>
