@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="message">Hello World!</h1>
+    <input type="color" id="choosed_bgcolor">
+
+    <script>
+        const color_bg = document.getElementById("choosed_bgcolor");
+        color_bg.addEventListener("input", changeColor);
+        
+        function changeColor(){
+            document.body.style.backgroundColor = color_bg.value;
+        }
+        
+   </script>
+
+</body>
+</html>
