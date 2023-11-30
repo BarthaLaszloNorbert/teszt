@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="datas"></p>
+    <script>
+        var city = document.getElementById('telepules').value;
+        var apiUrl = 'https://jsonplaceholder,typecode.com/user/1';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', apiUrl, true);
+
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                var temperature = xhr.responseText;
+                document.getElementById('datas').textContent = userdata;
+            }else{
+                document.getElementById('datas').textContent = 'Nem sikerült lekérni az adatokat.'
+            }
+        }
+
+        xhr.send();
+    </script>
+    
+</body>
+</html>
