@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="country" type="text">
+    <input type="button" value="Submit" onclick="countryData()">
+    <p id="response"></p>
+    
+    <script>
+        function countryData(){
+        var countryName = document.getElementById('country').value;
+
+
+        var apiUrl = 'https://restcountries.com/v3.1/name/'+countryName;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', apiUrl, true);
+
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                var valasz = xhr.responseText;
+                const obj = JSON.parse(valasz);
+                document.getElementById('response').innerHTML =
+                    "Altalános neve:" + obj[0].name.common +
+                    "<br>Fővárosa: "+ obj[0].capital +
+                    "<br>Népessége: "+ obj[0].population+
+                    " fő<br>Pénzneme: " + Object.values(obj[0].currencies)[0].name+ 
+                    '<br><img src="'+obj[0].flags.png+'">';
+            }else{
+                document.getElementById('response').textContent = 'Nem sikerült lekérni az ország adatait.'
+            }
+        }
+
+        xhr.send();
+    }
+    </script>
+    
+</body>
+</html>

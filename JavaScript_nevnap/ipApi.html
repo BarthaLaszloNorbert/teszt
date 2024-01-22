@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ip_address" type="text">
+    <input type="button" value="Submit" onclick="hely()">
+    <p id="response"></p>
+    
+    <script>
+        function ValidateIPaddress(ipaddress) {  
+            if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipaddress)) {  
+        return (true)  
+        }  
+        alert("You have entered an invalid IP address!")  
+        return (false)  
+}  
+        function hely(){
+        var ip = document.getElementById('ip_address').value;
+
+        if(ValidateIPaddress(ip)){
+        var apiUrl = 'http://ip-api.com/json/'+ip;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', apiUrl, true);
+
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                var valasz = xhr.responseText;
+                const obj = JSON.parse(valasz);
+                document.getElementById('response').innerHTML = obj.country +"<br>"+ obj.city +"<br>"+ obj.timezone;
+
+                //document.getElementById('response').textContent = ip +' címhez tartozó adatok: '+valasz;
+            }else{
+                document.getElementById('response').textContent = 'Nem sikerült lekérni az adatokat.'
+            }
+        }
+
+        xhr.send();
+    }
+    }
+    </script>
+    
+</body>
+</html>
